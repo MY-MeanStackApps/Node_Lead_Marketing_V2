@@ -24,12 +24,12 @@ var upload = multer({ //multer settings
 })
 
 router.post('/save', upload.single('file'), function(req, res, next) {
-    console.log(req.file);
+    // console.log(req.file);
     res.json(req.file.filename);
 });
 
 router.post('/download', function(req, res, next) {
-    console.log(req.body);
+    // console.log(req.body);
     var filePath = './uploads/' + req.body.filename;
     res.download(filePath);
 });
